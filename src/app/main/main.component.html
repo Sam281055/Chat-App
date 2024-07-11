@@ -1,0 +1,75 @@
+<div class="color2" style="width: 100%; height: 100%;">
+<div style="display: flex; width: 100%;" class="color1">
+        <div style="width: 50%; margin-left: 2%;" class="color1">
+          <h1 style="color:black">Chat-App</h1>
+        </div>
+        <div style="width: 50%; justify-content: end;">
+        <ion-button style="display: flex; color: black;" (click)="logout()" fill="clear" shape="round">
+          <h2>Salir</h2>
+        </ion-button>
+      </div>
+      </div>
+  <div style="
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 4%;">
+  <ion-text color="primary" style="color: black;">
+    <h1>Bienvenido {{username}}!</h1>
+  </ion-text>  
+</div>
+
+
+<div style="
+width: 100%;
+display: flex;
+justify-content: center;
+margin-top: 4%;">
+  <ion-input class="inp" type="text" placeholder="Ingrese el codigo de sala"></ion-input>
+  <ion-button style="color: black;" fill="clear">
+    <ion-icon name="send"></ion-icon>
+  </ion-button>
+</div>
+
+<div style="display: flex; justify-content: center;">
+<h1 style="color: black;">Salas disponibles</h1>
+</div>
+<div style="display: flex; margin-top: 2%; justify-content: center;">
+  <ion-card color="secondary" style="width: 40%;">
+    <a (click)="onSala1()" style="color: black;">
+    <ion-card-header class="color1">
+      <ion-card-title>Sala 1</ion-card-title>
+      <ion-card-subtitle>Chat Grupal</ion-card-subtitle>
+      <ion-card-subtitle>Activo</ion-card-subtitle>
+    </ion-card-header>
+  </a>
+  </ion-card>
+
+  <ion-card color="secondary" style="width: 40%;justify-content: center">
+    <ion-card-header color="warning">
+      <ion-card-title>Sala 2</ion-card-title>
+      <ion-card-subtitle>Chat Grupal</ion-card-subtitle>
+      <ion-card-subtitle>Mantenimiento</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+</div>
+<div style="display: flex; justify-content: center;">
+
+  <ion-card color="secondary" style="width: 40%;">
+    <ion-card-header color="danger">
+      <ion-card-title>Sala 3</ion-card-title>
+      <ion-card-subtitle>Chat Grupal</ion-card-subtitle>
+      <ion-card-subtitle>Inactivo</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card color="secondary" style="width: 40%;" color="danger">
+    <ion-card-header>
+      <ion-card-title>Sala 4</ion-card-title>
+      <ion-card-subtitle>Chat Grupal</ion-card-subtitle>
+      <ion-card-subtitle>Inactivo</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+
+</div>
+</div>

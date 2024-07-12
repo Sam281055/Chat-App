@@ -1,0 +1,62 @@
+<ion-content class="ion-padding" *ngIf="!onRegister && !onForgot">
+  <div class="content">
+    <form [formGroup]="formLogin" class="formulario" style="background: #D9D9D9;">
+      <ion-text color="primary" style="padding:10px;">
+        <h3 style="padding-left: 10px; color: black;">ThunderBird</h3>
+      </ion-text>
+      <ion-input class="inp" type="ios" name="email1" placeholder="Email" [formControl]="formLogin.controls.email"
+        type="text"></ion-input>
+      <br>
+      <ion-input class="inp" type="ios" name="password1" placeholder="Password"
+        [formControl]="formLogin.controls.password" type="password"></ion-input>
+      <div style="padding-bottom:5px; justify-content: end;">
+        <a class="btn-rec" (click)="toggle2()">
+          Recuperar constraseña
+        </a>
+        <ion-button (click)="toggle()" fill="solid" expand="block" color="danger">
+          Registrarse
+        </ion-button>
+        <ion-button (click)="login()" fill="solid" expand="block" color="danger">
+          Ingresar
+        </ion-button>
+      </div>
+
+    </form>
+  </div>
+</ion-content>
+
+<ion-content class="ion-padding" *ngIf="onRegister">
+  <form [formGroup]="formRegister" style="background: #D9D9D9;">
+    <ion-text color="primary" style="padding:10px;">
+      <h3 style="padding-left: 10px; color: black;">ThunderBird</h3>
+    </ion-text>
+    <ion-input class="inp" placeholder="Email" [formControl]="formRegister.controls.email" type="text"></ion-input>
+    <ion-input class="inp" placeholder="Username" [formControl]="formRegister.controls.username"
+      type="text"></ion-input>
+    <ion-input class="inp" placeholder="Password" [formControl]="formRegister.controls.password"
+      type="password"></ion-input>
+    <ion-button (click)="register()" fill="solid" expand="block" color="danger">
+      Registrarse
+    </ion-button>
+    <ion-button (click)="toggle()" fill="solid" expand="block" color="danger">
+      Volver
+    </ion-button>
+  </form>
+</ion-content>
+
+<ion-content *ngIf="onForgot">
+  <form [formGroup]="formPassword" style="background: #D9D9D9;">
+    <ion-text color="primary" style="padding:10px;">
+      <h3 style="padding-left: 10px;color: black;">ThunderBird</h3>
+      <h3 style="padding-left: 10px;color: black;">Recuperar constraseña</h3>
+    </ion-text>
+    <ion-input class="inp" [formControl]="formPassword.controls.email" type="ios" placeholder="Email"
+      type="text"></ion-input>
+    <ion-button (click)="forgotPassword()" fill="solid" expand="block" color="danger">
+      Recuperar
+    </ion-button>
+    <ion-button (click)="toggle2()" fill="solid" expand="block" color="danger">
+      Volver
+    </ion-button>
+  </form>
+</ion-content>

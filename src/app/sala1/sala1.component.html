@@ -1,0 +1,47 @@
+<ion-content>
+  <nav style="background: #D9D9D9;">
+    <div style="display: flex;">    
+      <ion-button style="color: black;" (click)="volver()" expand="block" fill="clear" shape="round">
+        <h4 style="color: black;">Return</h4>
+      </ion-button>
+        <div style="color: black;">
+          <h4 style="color: black;">Chat 1
+        </h4>
+      </div>
+    </div>
+    </nav>
+  <!-- iterar -->
+<div *ngFor="let item of chatRef">
+  <div class="me" *ngIf="uid== item.UserID">
+    <!-- <h1 style="color: black;">{{item.Message}}</h1> -->
+    <ion-card color="dark">
+      <ion-card-header >
+        <ion-card-title>{{item.Message}}</ion-card-title>
+        <ion-card-subtitle>Yo</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>{{item.Timestamp}}</ion-card-content>
+    </ion-card>
+  </div>
+  <div class="you" *ngIf="uid != item.UserID">
+    <ion-card color="dark">
+      <ion-card-header>
+        <ion-card-title>{{item.Message}}</ion-card-title>
+        <ion-card-subtitle>{{item.Name}}</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>{{formatDateTime(item.Timestamp)}}</ion-card-content>
+    </ion-card>
+  </div>
+</div>
+
+
+</ion-content>
+<footer style="background: #ECE6F0;">
+  <div style="display: flex;">
+    <ion-input type="text" [(ngModel)]="text" class="inp" placeholder="Introduzca un mensaje"></ion-input>
+    <ion-button fill="clear" (click)="send()">
+      <ion-icon name="send"></ion-icon>
+    </ion-button>
+  </div>
+</footer>

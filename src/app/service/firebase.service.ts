@@ -96,16 +96,6 @@ export class FirebaseService {
   
   // Enviar Mensaje
   sendMessage(nombre:string, mensaje:string, userId:string){
-    // return this.firestore.collection('chats').add({
-    // const data={Message: mensaje,
-    //   Name: nombre,
-    //   Timestamp: String(Date.now())
-    //   }
-    // });
-    // console.log(data);
-    
-    // const path=`chats/`;
-    // return setDoc(doc(getFirestore(), path), data);
     return addDoc(collection(this.db, "chats"),{
       Name: nombre,
       Timestamp: serverTimestamp(),
@@ -120,12 +110,6 @@ export class FirebaseService {
     return from(getDocs(q)).pipe(
       map(snapshot => snapshot.docs.map(doc => doc.data() as Message))
     )
-      // return from(querySnapshot).pipe(
-      //   map(snapshot => snapshot.docs.map(doc => doc.data() as Message))
-      // );
+
   }
 }
- // querySnapshot.forEach((doc)=>{
-    //   console.log(doc.data());
-    //   this.chatRef=doc.data();
-    // });

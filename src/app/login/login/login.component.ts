@@ -98,7 +98,7 @@ export class LoginComponent implements OnInit {
 
     console.log(this.formRegister.value.username);
 
-    const usernameQuerySnapshot = await this.firestore.collection('users', ref => ref.where('name', '==', this.formRegister.value.username)).get().toPromise();
+    const usernameQuerySnapshot = await this.firestore.collection('users', ref => ref.where('username', '==', this.formRegister.value.username)).get().toPromise();
     if (!usernameQuerySnapshot?.empty) {
       this.utilSvc.presentToast({
         message: "Username already taken",

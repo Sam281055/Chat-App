@@ -11,7 +11,6 @@ import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { MainModule } from './main/main.module';
-import { Sala1Component } from './sala1/sala1.component';
 import { Sala1Module } from './sala1/sala1.module';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
